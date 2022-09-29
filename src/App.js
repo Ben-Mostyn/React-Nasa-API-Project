@@ -1,15 +1,55 @@
+import React, { Component, state } from 'react';
+import axios from 'axios';
 import './App.css';
+import PicOfDay from './components/PicOfDay';
+import ISSInfo from './components/ISS';
+import Card from './components/card';
+import Weather from './components/weather';
 
-const App = () => {
-  return (
-    <div>
-      <p>Hi</p>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggle: false
+    }
+  }
+  toggleBtn = () => {
+    if (this.state.toggle === false) {
+      console.log('changing to true');
+      this.setState({ toggle: true });
+
+    }
+    else {
+      this.setState({ toggle: false })
+      console.log('switch to false')
+    };
+  }
+  render() {
+
+    return (
+      <>
+        {/* <div>
+        <button onClick={() => }>Click</button>
+      </div> */}
+        <button onClick={
+          this.toggleBtn
+        }>BUTTON</button>
+
+        {
+          props.toggle ?
+
+            <Card>
+              <Weather />
+              <PicOfDay />
+              <ISSInfo />
+            </Card>
+            : null
+        }
+
+
+      </>
+    );
+  }
 }
 
 export default App;
-
-
-
-
