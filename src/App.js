@@ -35,7 +35,9 @@ class App extends Component {
           <Link className="nav-link" to="ISS">
             ISSInfo
           </Link>
-          {/* <Link to="Weather">Weather</Link> */}
+          <Link className="nav-link" to="Weather">
+            Weather
+          </Link>
         </div>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -44,12 +46,11 @@ class App extends Component {
             element={
               <Card>
                 <PicOfDay />
-                <Weather />
               </Card>
             }
           />
           <Route path="ISS" element={<ISSInfo />} />
-          {/* <Route path="Weather" element={<Weather />} /> */}
+          <Route path="Weather" element={<Weather />} />
         </Routes>
       </>
     );
