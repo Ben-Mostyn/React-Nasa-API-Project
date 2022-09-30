@@ -34,16 +34,8 @@
 //   );
 // };
 
-<<<<<<< HEAD
-    return (
-        <div>
-            <p>{WeatherData.init}</p>
-        </div>
-    )
-}
-=======
+
 // export default Weather;
->>>>>>> 8810931562d9bb08276f290f49e006ece5482cb4
 
 // // place holder - http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json
 // // API - https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0
