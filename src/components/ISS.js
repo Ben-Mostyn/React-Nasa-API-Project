@@ -36,7 +36,7 @@ const ISSInfo = (props) => {
 
     const getWeatherData = () => {
         axios
-            .get(``)
+            .get(`https://api.openweathermap.org/data/2.5/weather?lat=40.530&lon=-72.349&appid=4012d3b5794dee1651873924836c5fac`)
             .then((res) => {
                 setISSData(res.data);
                 console.log(res.data);
@@ -53,7 +53,7 @@ const ISSInfo = (props) => {
         }}>
             <img src={issImage} alt="Logo" style={{}} />
             <p>The {ISSData.name} is currently at:</p>
-            <p>Latitude: {ISSData.latitude}, Longitude: {ISSData.longitude}</p></div>
+            <p>Latitude: {ISSData.latitude}, Longitude: {ISSData.longitude} {country.sys.country}</p></div>
     );
 }
 
