@@ -12,6 +12,10 @@ img {
   height: 350px;
 }
 
+.ISS-image {
+  border-radius: 10px;
+  border-width: 5px;
+}
 
 .Date-name {
   color: blue;
