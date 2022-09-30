@@ -1,12 +1,17 @@
-
 import React, { Component, state } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+
+// Style
 import "./App.css";
+
+//Components
 import PicOfDay from "./components/PicOfDay";
 import ISSInfo from "./components/ISS";
 import Card from "./components/card";
 import Weather from "./components/weather";
-import { Routes, Route, Link } from "react-router-dom";
 
+//Pages
+import Landing from "./Pages/Landing";
 
 class App extends Component {
   constructor(props) {
@@ -19,13 +24,23 @@ class App extends Component {
   render() {
     return (
       <>
-        <Link to="/">Pic of Day</Link>
-        <Link to="ISS">ISSInfo</Link>
-        {/* <Link to="Weather">Weather</Link> */}
-
+        {/* Links to different pages - Link to and path MUST match */}
+        <div className="nav-container">
+          <Link className="nav-link" to="/">
+            Home{" "}
+          </Link>
+          <Link className="nav-link" to="Pic of Day">
+            Pic of Day
+          </Link>
+          <Link className="nav-link" to="ISS">
+            ISSInfo
+          </Link>
+          {/* <Link to="Weather">Weather</Link> */}
+        </div>
         <Routes>
+          <Route path="/" element={<Landing />} />
           <Route
-            path="/"
+            path="Pic of Day"
             element={
               <Card>
                 <PicOfDay />
@@ -41,4 +56,3 @@ class App extends Component {
 }
 
 export default App;
-

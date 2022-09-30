@@ -26,29 +26,27 @@ const PicOfDay = (props) => {
   }, []);
 
   return (
-    <div>
-      <>
-        <button
-          onClick={() => {
-            !toggle ? setToggle(true) : setToggle(false);
-            console.log(toggle);
-          }}
-        >
-          Show Image
-        </button>
-        <div style={{ backgroundColor: "red" }}>
-          <p className="Date-name">This is the date {spaceData.date}🚀</p>
+    <>
+      <button
+        onClick={() => {
+          !toggle ? setToggle(true) : setToggle(false);
+          console.log(toggle);
+        }}
+      >
+        Show Image
+      </button>
+      <div>
+        <p className="Date-name">This is the date {spaceData.date}🚀</p>
+      </div>
+      <div>
+        <p className="explanation">{spaceData.explanation}</p>
+      </div>
+      {toggle ? (
+        <div>
+          <img src={spaceData.url} className="Space-image"></img>
         </div>
-        <div style={{ backgroundColor: "red" }}>
-          <p className="explanation">{spaceData.explanation}</p>
-        </div>
-        {toggle ? (
-          <div>
-            <img src={spaceData.url} className="Space-image"></img>
-          </div>
-        ) : null}
-      </>
-    </div>
+      ) : null}
+    </>
   );
 };
 
