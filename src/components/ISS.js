@@ -13,10 +13,11 @@ const ISSInfo = (props) => {
 
     useEffect(() => {
         getData();
-        getWeatherData();
+        //getWeatherData();
         const interval = setInterval(() => {
             getData();
-        }, 60 * 1000);
+            //getWeatherData();
+        }, 5 * 1000);
         return () => clearInterval(interval);
     }, []);
 
@@ -26,35 +27,36 @@ const ISSInfo = (props) => {
             .then((res) => {
                 setISSData(res.data);
                 console.log(res.data);
+
             }).catch((error) => {
                 console.log('error', error);
             })
     };
-
-
 
     const getWeatherData = () => {
         axios
-            .get(`https://api.openweathermap.org/data/2.5/weather?lat=2.6945516794882&lon=25.193033620408appid=4012d3b5794dee1651873924836c5fac`)
+            .get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${ISSData.latitude},${ISSData.longitude}&key=AIzaSyDh3_hpjYakleyfu0FTOxW8aQ81kAmO6g8`)
             .then((res) => {
-                if (res != null) {
-                    setCountry(res.data);
-                    console.log(country.sys.country);
-                }
+                setCountry(res.data);
+                console.log(``);
             }).catch((error) => {
                 console.log('error', error);
             })
     };
+
+
 
     return (
         <div style={{
             backgroundColor: 'grey', display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            height: '100vh'
         }}>
-            <img src={issImage} alt="Logo" style={{}} />
+            <img src={issImage} alt="Logo" className='ISS-image' />
             <p>The {ISSData.name} is currently at:</p>
             <p>Latitude: {ISSData.latitude}, Longitude: {ISSData.longitude}</p>
+
         </div>
     );
 }
