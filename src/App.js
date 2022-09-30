@@ -44,6 +44,7 @@ class App extends Component {
             element={
               <Card>
                 <PicOfDay />
+                <Weather />
               </Card>
             }
           />
