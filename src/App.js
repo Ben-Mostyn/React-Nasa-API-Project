@@ -5,6 +5,13 @@ import PicOfDay from "./components/PicOfDay";
 import ISSInfo from "./components/ISS";
 import Card from "./components/card";
 import Weather from "./components/weather";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+} from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
