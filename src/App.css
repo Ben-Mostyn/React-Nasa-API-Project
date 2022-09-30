@@ -25,7 +25,6 @@ img {
   height: 350px;
 }
 
-
 h2 {
   font-size: 100px;
 }
@@ -37,11 +36,12 @@ h2 {
   align-items: center;
   height: 80vh;
   /* background-image: url("./images/space.jpeg"); */
-
+}
 .ISS-image {
   border-radius: 10px;
   border-width: 5px;
-
+}
+.Space-image {
 }
 
 .Date-name {

@@ -43,7 +43,7 @@ const PicOfDay = (props) => {
       </div>
       {toggle ? (
         <div>
-          <img src={spaceData.url} className="Space-image"></img>
+          <img src={spaceData.url} className="Space-image, ISS-image"></img>
         </div>
       ) : null}
     </>

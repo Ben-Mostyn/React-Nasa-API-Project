@@ -27,7 +27,7 @@ class App extends Component {
         {/* Links to different pages - Link to and path MUST match */}
         <div className="nav-container">
           <Link className="nav-link" to="/">
-            Home{" "}
+            Home
           </Link>
           <Link className="nav-link" to="Pic of Day">
             Pic of Day
