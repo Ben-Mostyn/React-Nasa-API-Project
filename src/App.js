@@ -1,17 +1,10 @@
 import React, { Component, state } from "react";
-import axios from "axios";
 import "./App.css";
 import PicOfDay from "./components/PicOfDay";
 import ISSInfo from "./components/ISS";
 import Card from "./components/card";
 import Weather from "./components/weather";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-  Link,
-} from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -24,30 +17,22 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <div>
-        <button onClick={() => }>Click</button>
-      </div> */}
-        <button
-          onClick={() => {
-            this.setState({ toggle: !this.state.toggle });
-            console.log(this.state.toggle);
-          }}
-        >
-          BUTTON
-        </button>
+        <Link to="/">Pic of Day</Link>
+        <Link to="ISS">ISSInfo</Link>
+        {/* <Link to="Weather">Weather</Link> */}
 
-        {/* {this.state.toggle ? (
-          <Card>
-            <Weather />
-            <PicOfDay />
-            <ISSInfo />
-          </Card>
-        ) : null} */}
-        {this.state.toggle && (
-          <Card>
-            <PicOfDay />
-          </Card>
-        )}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Card>
+                <PicOfDay />
+              </Card>
+            }
+          />
+          <Route path="ISS" element={<ISSInfo />} />
+          {/* <Route path="Weather" element={<Weather />} /> */}
+        </Routes>
       </>
     );
   }
