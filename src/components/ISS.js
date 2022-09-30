@@ -29,17 +29,18 @@ const ISSInfo = (props) => {
             }).catch((error) => {
                 console.log('error', error);
             })
-        // Error handling
     };
 
 
 
     const getWeatherData = () => {
         axios
-            .get(`https://api.openweathermap.org/data/2.5/weather?lat=40.530&lon=-72.349&appid=4012d3b5794dee1651873924836c5fac`)
+            .get(`https://api.openweathermap.org/data/2.5/weather?lat=2.6945516794882&lon=25.193033620408appid=4012d3b5794dee1651873924836c5fac`)
             .then((res) => {
-                setISSData(res.data);
-                console.log(res.data);
+                if (res != null) {
+                    setCountry(res.data);
+                    console.log(country.sys.country);
+                }
             }).catch((error) => {
                 console.log('error', error);
             })
@@ -53,7 +54,8 @@ const ISSInfo = (props) => {
         }}>
             <img src={issImage} alt="Logo" style={{}} />
             <p>The {ISSData.name} is currently at:</p>
-            <p>Latitude: {ISSData.latitude}, Longitude: {ISSData.longitude}</p></div>
+            <p>Latitude: {ISSData.latitude}, Longitude: {ISSData.longitude}</p>
+        </div>
     );
 }
 
