@@ -7,11 +7,13 @@ import issImage from '../ISS.jpeg';
 // Store all in data array
 
 const ISSInfo = (props) => {
-    const [roverData, setRoverData] = useState({});
+    const [ISSData, setISSData] = useState({});
+    const [country, setCountry] = useState({});
 
 
     useEffect(() => {
         getData();
+        getWeatherData();
         const interval = setInterval(() => {
             getData();
         }, 60 * 1000);
@@ -22,12 +24,25 @@ const ISSInfo = (props) => {
         axios
             .get('https://api.wheretheiss.at/v1/satellites/25544')
             .then((res) => {
-                setRoverData(res.data);
+                setISSData(res.data);
                 console.log(res.data);
             }).catch((error) => {
                 console.log('error', error);
             })
         // Error handling
+    };
+
+
+
+    const getWeatherData = () => {
+        axios
+            .get(``)
+            .then((res) => {
+                setISSData(res.data);
+                console.log(res.data);
+            }).catch((error) => {
+                console.log('error', error);
+            })
     };
 
     return (
@@ -37,8 +52,8 @@ const ISSInfo = (props) => {
             justifyContent: 'center',
         }}>
             <img src={issImage} alt="Logo" style={{}} />
-            <p>The {roverData.name} is currently at:</p>
-            <p>Latitude: {roverData.latitude}, Longitude: {roverData.longitude}</p></div>
+            <p>The {ISSData.name} is currently at:</p>
+            <p>Latitude: {ISSData.latitude}, Longitude: {ISSData.longitude}</p></div>
     );
 }
 

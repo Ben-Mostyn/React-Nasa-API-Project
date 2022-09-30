@@ -1,6 +1,7 @@
 import React, { Component, state } from 'react';
 import axios from 'axios';
 import './App.css';
+<<<<<<< HEAD
 import PicOfDay from './components/PicOfDay';
 import ISSInfo from './components/ISS';
 import Card from './components/card';
@@ -51,5 +52,20 @@ class App extends Component {
     );
   }
 }
+=======
+
+
+
+const App = () => {
+  return (
+    <div><p>Hi</p></div>
+  );
+}
+
+export default App;
+
+
+
+>>>>>>> main
 
 export default App;

@@ -29,7 +29,6 @@ const Weather = (props) => {
 
     return (
         <div>
-            <img src={issImage} alt="Logo" style={{}} />
             <p>{WeatherData.init}</p>
         </div>
     )
